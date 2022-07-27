@@ -1,0 +1,29 @@
+amsr2-example:
+  description: AMSR-2 TC
+  projection:
+    a: 6371228.0
+    lat_0: 13.4
+    lon_0: 86.2 
+    proj: eqc
+    units: m
+  resolution:
+  - 10000
+  - 10000
+  sector_info:
+    storm_name: AMPHAN
+    final_storm_name: AMPHAN
+    clat: 13.4
+    clon: 86.2
+    pressure: 911.0
+    storm_year: 2020
+    invest_number: 91
+    synoptic_time: '202005180600'
+    storm_num: 1
+    storm_basin: IO
+  sector_type: tc
+  shape:
+    height: 1400
+    width: 1400
+  area_extent:
+    lower_left_xy: [-700000, -700000]
+    upper_right_xy: [700000, 700000]
