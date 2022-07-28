@@ -17,6 +17,19 @@
     # # # See the included license for more details.
 
 
+# 1-tutorial-notebook-bug-fixes-and-readme-updates
+
+### Bug Fixes
+* **notebooks/utils/set\_env.ipy**
+    * Force os.system to open a bash subshell, otherwise might open sh subshell
+    * Check if GEOIPS_PACKAGES_DIR is set rather than GEOIPS_OUTDIRS, since GEOIPS_OUTDIRS is set manually
+    * Use abspath of GEOIPS_OUTDIRS
+### Documentation Updates
+* **README.md**
+    * GEOIPS_CONFIG_FILE now points to geoips/setup/config_geoips
+    * Replace instructions to checkout branch dev with main
+
+
 # v1.5.1: 2022-07-13, canned interface modules, tutorial plugin script
 
 ### Major New Functionality
