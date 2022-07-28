@@ -53,7 +53,7 @@ Setup System Environment Variables
     export GEOIPS_BASEDIR=$HOME/geoproc
 
     # This config file must be sourced ANY TIME you want to run the geoips geoips_tutorial plugin
-    export GEOIPS_CONFIG_FILE=$GEOIPS_BASEDIR/geoips_packages/geoips_tutorial/setup/config_plugin
+    export GEOIPS_CONFIG_FILE=$GEOIPS_BASEDIR/geoips_packages/geoips/setup/config_plugin
 
 ```
 
@@ -64,14 +64,14 @@ Clone geoips_tutorial git repositories required for setup scripts
 
     git clone $GEOIPS_REPO_URL/geoips.git $GEOIPS_BASEDIR/geoips_packages/geoips
     git -C $GEOIPS_BASEDIR/geoips_packages/geoips pull
-    git -C $GEOIPS_BASEDIR/geoips_packages/geoips checkout -t origin/dev
-    git -C $GEOIPS_BASEDIR/geoips_packages/geoips checkout dev
+    git -C $GEOIPS_BASEDIR/geoips_packages/geoips checkout -t origin/main
+    git -C $GEOIPS_BASEDIR/geoips_packages/geoips checkout main
     git -C $GEOIPS_BASEDIR/geoips_packages/geoips pull
 
     git clone $GEOIPS_REPO_URL/geoips_tutorial.git ${GEOIPS_BASEDIR}/geoips_packages/geoips_tutorial
     git -C ${GEOIPS_BASEDIR}/geoips_packages/geoips_tutorial pull
-    git -C ${GEOIPS_BASEDIR}/geoips_packages/geoips_tutorial checkout -t origin/dev
-    git -C ${GEOIPS_BASEDIR}/geoips_packages/geoips_tutorial checkout dev
+    git -C ${GEOIPS_BASEDIR}/geoips_packages/geoips_tutorial checkout -t origin/main
+    git -C ${GEOIPS_BASEDIR}/geoips_packages/geoips_tutorial checkout main
     git -C ${GEOIPS_BASEDIR}/geoips_packages/geoips_tutorial pull
 ```
 
@@ -82,7 +82,7 @@ IF REQUIRED: Install and test base geoips conda environment
     # This prompts you through all the steps of installing the geoips conda environment from scratch,
     # using the parameters specified above.  This only needs to be done once per system, skip if you
     # already ran this command and successfully installed the geoips conda environment.
-    $GEOIPS_BASEDIR/geoips_packages/geoips/base_install_and_test.sh dev
+    $GEOIPS_BASEDIR/geoips_packages/geoips/base_install_and_test.sh main
 ```
 
 Install geoips_tutorial package
