@@ -10,13 +10,14 @@ def set_geoips_env():
     GEOIPS_BASEDIR = os.path.abspath(f'{NOTEBOOK_DIR}/../../..')
     GEOIPS_CONFIG_FILE = f"{GEOIPS_BASEDIR}/geoips_packages/geoips/setup/config_geoips"
 
-    if not os.getenv('GEOIPS_OUTDIRS'):
+    if not os.getenv('GEOIPS_PACKAGES_DIR'):
         tmp_env = f'{NOTEBOOK_DIR}/.env'
         print (f"Setting GEOIPS environment variables.\nUsing: {GEOIPS_CONFIG_FILE}")
-        os.system(f'source {GEOIPS_CONFIG_FILE}; env | grep GEOIPS > {tmp_env}; echo Creating temporary env file: {tmp_env}')
+        os.system(f'/bin/bash -c "source {GEOIPS_CONFIG_FILE}; env | grep GEOIPS > {tmp_env}; echo Creating temporary env file: {tmp_env}"')
         %load_ext dotenv
         %dotenv $tmp_env
-        os.system(f'rm -v {tmp_env}')
-    os.environ['GEOIPS_OUTDIRS'] = os.path.join(os.getcwd(), '../outputs')
+        os.system(f'/bin/bash -c "rm -v {tmp_env}"')
+    os.environ['GEOIPS_OUTDIRS'] = os.path.abspath(os.path.join(os.getcwd(), '../outputs'))
 
+    print(f'GEOIPS_OUTDIRS: {os.getenv("GEOIPS_OUTDIRS")}')
     print(f'GEOIPS_PACKAGES_DIR: {os.getenv("GEOIPS_PACKAGES_DIR")}')
