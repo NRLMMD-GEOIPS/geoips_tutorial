@@ -16,7 +16,6 @@
     # # # or FITNESS FOR A PARTICULAR PURPOSE.
     # # # See the included license for more details.
 
-
 # 1-tutorial-notebook-bug-fixes-and-readme-updates
 
 ### Bug Fixes
@@ -28,6 +27,13 @@
 * **README.md**
     * GEOIPS_CONFIG_FILE now points to geoips/setup/config_geoips
     * Replace instructions to checkout branch dev with main
+
+NRLMMD-GEOIPS/geoips_tutorial#3 add git lfs install to README.md
+
+### Installation and Test
+* **README.md**
+    * Add "git lfs install" to README to ensure Git Large File Storage is enabled to prevent corrupt clones
+        on git lfs tracked data files.
 
 
 # v1.5.1: 2022-07-13, canned interface modules, tutorial plugin script

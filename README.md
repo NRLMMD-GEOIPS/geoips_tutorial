@@ -45,6 +45,8 @@ Setup System Environment Variables
     # source </full/path/to/config/file>
     # to your ~/.bashrc file
 
+    git lfs install  # Required to clone Git Large File Storage tracked data files
+
     # GEOIPS_REPO_URL should point to the base URL for git clone commands
     export GEOIPS_REPO_URL=https://github.com/NRLMMD-GeoIPS
 
