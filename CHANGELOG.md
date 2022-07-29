@@ -17,6 +17,14 @@
     # # # See the included license for more details.
 
 
+NRLMMD-GEOIPS/geoips_tutorial#3 add git lfs install to README.md
+
+### Installation and Test
+* **README.md**
+    * Add "git lfs install" to README to ensure Git Large File Storage is enabled to prevent corrupt clones
+        on git lfs tracked data files.
+
+
 # v1.5.1: 2022-07-13, canned interface modules, tutorial plugin script
 
 ### Major New Functionality
