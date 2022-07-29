@@ -55,7 +55,7 @@ Setup System Environment Variables
     export GEOIPS_BASEDIR=$HOME/geoproc
 
     # This config file must be sourced ANY TIME you want to run the geoips geoips_tutorial plugin
-    export GEOIPS_CONFIG_FILE=$GEOIPS_BASEDIR/geoips_packages/geoips/setup/config_plugin
+    export GEOIPS_CONFIG_FILE=$GEOIPS_BASEDIR/geoips_packages/geoips/setup/config_geoips
 
 ```
 
