@@ -16,6 +16,16 @@
     # # # or FITNESS FOR A PARTICULAR PURPOSE.
     # # # See the included license for more details.
 
+
+# NRLMMD-GEOIPS/geoips_tutorial#6
+
+### Improvements
+* **example_scripts** Added examples for Command Line Processing tutorial
+    * GOES-16 Static Visible annotated imagery example
+    * AMSR2 windspeed single source clean imagery example
+    * AMSR2 windspeed config-based clean imagery example
+    * AMSR2 overlays config-based imagery example
+
 # 1-tutorial-notebook-bug-fixes-and-readme-updates
 
 ### Bug Fixes
