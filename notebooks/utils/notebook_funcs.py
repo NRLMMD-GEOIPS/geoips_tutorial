@@ -49,15 +49,22 @@ def func_name_check(func_name, interface_by_type_dict, interface):
         print(f'No worries, this will still be a good chance to see how the {interface} interface handles this bad function name')
         print(f'And for reference, here are the {interface_names} you can choose from:\n{all_funcs}')
 
-def print_signatures(interface_by_type_dict, get_func):
+def print_signatures(interface_by_type_dict, get_func, by_type=False):
     import inspect
     all_types = list(interface_by_type_dict.keys())
+    type_sigs = {}
     for interface_type in sorted(all_types):
         interface_names = interface_by_type_dict[interface_type]
         for func_name in sorted(interface_names):
             interface_func = get_func(func_name)
             signature = inspect.signature(interface_func)
-            print(f'Type: {interface_type}, Name: {func_name},\n- Signature: {signature}\n')
+            if by_type:
+                type_sigs[interface_type] = signature
+            else:
+                print(f'Type: {interface_type}, Name: {func_name},\n- Signature: {signature}\n')
+    if by_type:
+        for interface_type, signature in type_sigs.items():
+            print(f'Type {interface_type} signature: {signature}\n')
 
 def print_dict_structure(interface_by_type_dict, get_func):
     import inspect
