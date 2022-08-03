@@ -16,7 +16,8 @@
     # # # or FITNESS FOR A PARTICULAR PURPOSE.
     # # # See the included license for more details.
 
-# 5-clean-up-and-apply-bug-fixes-for-jupyter-notebooks
+
+# NRLMMD-GEOIPS/geoips_tutorial#5-clean-up-and-apply-bug-fixes-for-jupyter-notebooks
 
 ### Bug Fixes
 * **notebooks/interfaces.ipynb**
@@ -35,6 +36,15 @@
 ### Major new functionality
 * **launch.json template**
     *Added a launch.json file intended to be copied over to a .vscode directory. It contains an AMSR 2 test case
+
+# NRLMMD-GEOIPS/geoips_tutorial#6
+
+### Improvements
+* **example_scripts** Added examples for Command Line Processing tutorial
+    * GOES-16 Static Visible annotated imagery example
+    * AMSR2 windspeed single source clean imagery example
+    * AMSR2 windspeed config-based clean imagery example
+    * AMSR2 overlays config-based imagery example
 
 # 1-tutorial-notebook-bug-fixes-and-readme-updates
 

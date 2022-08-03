@@ -1,0 +1,17 @@
+output_config_type: single_source
+reader_name: amsr2_netcdf
+filenames: !ENV ${GEOIPS_BASEDIR}/test_data/test_data_amsr2/data/AMSR2-OCEAN*.nc
+
+available_sectors:
+  tc:
+    trackfile_parser: bdeck_parser
+    trackfiles: 
+        - !ENV ${GEOIPS}/tests/sectors/tc_bdecks/bio012020.dat
+
+outputs:
+  tc:
+    requested_sector_type: tc
+    output_format: imagery_clean
+    filename_formats: ['tc_clean_fname']
+    product_names:
+      - windspeed
