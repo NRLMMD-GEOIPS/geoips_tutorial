@@ -21,7 +21,9 @@
 # This script will copy over some of the components from the geoips_template_plugin 
 # repository to $GEOIPS_PACKAGES_DIR/plugin_tutorial
 
-plugin_name=${1:-plugin_tutorial}
+set -e
+
+plugin_name=${1:-tutorial_plugin}
 
 check_continue() {
     unset CONTINUE
@@ -44,37 +46,75 @@ check_continue() {
     fi
 }
 
-template_plugin=$GEOIPS_PACKAGES_DIR/geoips_template_plugin
-plugin_tutorial=$GEOIPS_PACKAGES_DIR/$plugin_name
+GEOIPS_TUTORIAL=$GEOIPS_PACKAGES_DIR/geoips_tutorial
+PLUGIN_TUTORIAL=$GEOIPS_PACKAGES_DIR/$plugin_name
 
-if [[ ! -d $template_plugin ]]; then
-    echo "GeoIPS template plugin not cloned, running $GEOIPS/setup/repo_clone_update_install.sh"
-    internal_plugins="geoips_template_plugin"
-    $GEOIPS/setup/repo_clone_update_install.sh repo_clone
-fi
-
-if [[ -d $plugin_tutorial ]]; then
-    echo "WARNING: plugin tutorial directory already exists"
+if [[ -d $PLUGIN_TUTORIAL ]]; then
+    echo "WARNING: plugin directory already exists"
+    echo $PLUGIN_TUTORIAL
     echo "This script may overwrite files. How would you like to proceed?"
     check_continue
 fi
 
 # Make the plugin_tutorial directory
-echo "Creating plugin tutorial directory: $plugin_tutorial"
-mkdir -p $plugin_tutorial/$plugin_name
+PLUGIN_DIR=$PLUGIN_TUTORIAL/$plugin_name
+echo "Creating plugin tutorial directory: $PLUGIN_TUTORIAL"
+mkdir -pv $PLUGIN_DIR
+touch $PLUGIN_DIR/__init__.py
 
-echo "Copying template setup scripts"
-cp -r $template_plugin/setup* $plugin_tutorial/
-cp $template_plugin/VERSION $plugin_tutorial/
+echo ""
 
-echo "Copying template interface modules"
-rsync -a $template_plugin/geoips_template_plugin/interface_modules/ $plugin_tutorial/$plugin_name/ --exclude "*pycache*"
+echo "Creating base interface module directories"
+interface_module_dirs=(
+    filename_formats
+    interpolation
+    output_formats
+    procflows
+    readers
+    title_formats
+    trackfile_parsers
+    user_colormaps
+)
 
-echo "Copying template YAML configs"
-cp -r $template_plugin/geoips_template_plugin/yaml_configs $plugin_tutorial/$plugin_name/
+for module_dir in ${interface_module_dirs[@]}; do
+    mdir=$PLUGIN_DIR/interface_modules/$module_dir
+    mkdir -p $mdir
+    echo $mdir
+    touch $mdir/__init__.py
+done
 
-echo "Copying over tests"
-mkdir $plugin_tutorial/tests
-cp $template_plugin/tests/test_all.sh $plugin_tutorial/tests/
-cp -r $template_plugin/tests/scripts $plugin_tutorial/tests/
+echo ""
 
+echo "Creating YAML config directories"
+yaml_config_dirs=(
+    plotting_params/boundaries
+    plotting_params/gridlines
+    product_inputs
+    product_params
+)
+for yaml_dir in ${yaml_config_dirs[@]}; do
+    ydir=$PLUGIN_DIR/yaml_configs/$yaml_dir
+    mkdir -p $PLUGIN_DIR/yaml_configs/$yaml_dir
+    echo $ydir
+done
+
+echo ""
+
+echo "Copying geoips_tutorial example interface modules"
+tutorial_module_dirs=(
+    filename_formats
+    readers
+)
+for interface_dir in ${tutorial_module_dirs[@]}; do
+    cp -v $GEOIPS_TUTORIAL/geoips_tutorial/interface_modules/$interface_dir/* $PLUGIN_DIR/interface_modules/$interface_dir/
+done
+
+echo ""
+
+echo "Copy version file from geoips_tutorial"
+cp -v $GEOIPS_TUTORIAL/VERSION $PLUGIN_TUTORIAL/VERSION
+
+echo ""
+
+echo "Copy over tutorial setup.py from geoips_tutorial"
+cp -v $GEOIPS_TUTORIAL/plugin/tutorial_setup.py $PLUGIN_TUTORIAL/setup.py
