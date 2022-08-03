@@ -16,6 +16,12 @@
     # # # or FITNESS FOR A PARTICULAR PURPOSE.
     # # # See the included license for more details.
 
+NRLMMD-GEOIPS/geoips#25 - remove Visible from tests
+
+### Improvements
+* Use Infrared-Gray for AMSR2 overlay vs Visible
+* Use Infrared for goes-16 static product
+
 
 # NRLMMD-GEOIPS/geoips_tutorial#5-clean-up-and-apply-bug-fixes-for-jupyter-notebooks
 
