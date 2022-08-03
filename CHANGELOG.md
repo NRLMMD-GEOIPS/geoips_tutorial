@@ -16,6 +16,26 @@
     # # # or FITNESS FOR A PARTICULAR PURPOSE.
     # # # See the included license for more details.
 
+# 5-clean-up-and-apply-bug-fixes-for-jupyter-notebooks
+
+### Bug Fixes
+* **notebooks/interfaces.ipynb**
+    * Fixed bugs under get_filenamer_type and procflow example codeblocks
+### Improvements
+* **notebooks**
+    * Remove deprecated interface functions
+    * Updated formatting in markdown blocks
+    * Update examples under interfaces notebook to center around ABI Infrared-Gray product
+* **notebook_funcs**
+    * Add by_type kwarg to print_signatures() that prints the function signature for each unique module type when true
+* **setup_tutorial_plugin**
+    * Removed reliance on rsync, which may not be available across all systems
+    * Removed reliance on geoips_template_plugin, and manually sets up interface module directories
+    * Add partially populated tutorial_setup.py, which gets copied to the tutorial_plugin directory
+### Major new functionality
+* **launch.json template**
+    *Added a launch.json file intended to be copied over to a .vscode directory. It contains an AMSR 2 test case
+
 # 1-tutorial-notebook-bug-fixes-and-readme-updates
 
 ### Bug Fixes
