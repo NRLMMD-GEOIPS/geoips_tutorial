@@ -9,6 +9,7 @@
             "type": "python",
             "request": "launch",
             "program": "${workspaceFolder}/geoips/geoips/commandline/run_procflow.py",
+            "envFile": "${workspaceFolder}/geoips/setup/.env",
             "console": "integratedTerminal",
             "justMyCode": true,
             "args": [
