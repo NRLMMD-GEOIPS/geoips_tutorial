@@ -16,6 +16,12 @@
     # # # or FITNESS FOR A PARTICULAR PURPOSE.
     # # # See the included license for more details.
 
+# geoips_tutorial#10
+
+### BugFix
+* **example launch.json**
+    * Add envFile to launch.json, which sets the GEOIPS env variables for the procflow
+
 NRLMMD-GEOIPS/geoips#25 - remove Visible from tests
 
 ### Improvements
