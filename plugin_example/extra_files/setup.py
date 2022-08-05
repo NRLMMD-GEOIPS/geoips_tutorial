@@ -56,6 +56,7 @@ setuptools.setup(
         'geoips.filename_formats': [
             # Add filename interface modules here
             'my_fname_format=my_plugin.interface_modules.filename_formats.my_fname_format:my_fname_format',
+            'my_geotiff_fname=my_plugin.interface_modules.filename_formats.my_geotiff_fname:my_geotiff_fname',
         ],
       }
 )
