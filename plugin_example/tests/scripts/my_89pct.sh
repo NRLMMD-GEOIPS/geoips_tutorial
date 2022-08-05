@@ -4,7 +4,7 @@ run_procflow $GEOIPS_BASEDIR/test_data/test_data_amsr2/data/20200518.062048.gcom
           --procflow single_source \
           --reader_name my_amsr2_reader \
           --product_name my_89pct \
-          --filename_format my_fname_format \
+          --filename_format my_geotiff_fname \
           --output_format my_geotiff_output \
           --trackfile_parser bdeck_parser \
           --trackfiles $GEOIPS/tests/sectors/tc_bdecks/bio012020.dat
