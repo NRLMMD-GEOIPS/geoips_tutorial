@@ -1,4 +1,8 @@
 amsr2:
+  my_color89:
+    variables: ['tb89hA', 'tb89vA']
+    interp_args:
+      sigmaval: 10000
   my_89pct:
     variables: ['tb89hA', 'tb89vA']
     interp_args:
