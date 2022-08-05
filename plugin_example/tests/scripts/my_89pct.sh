@@ -2,7 +2,7 @@
 
 run_procflow $GEOIPS_BASEDIR/test_data/test_data_amsr2/data/20200518.062048.gcom-w1.amsr2.amsr2_nesdismanatigcom.x.x.mbt.x.e202005180759470_c202005180937100.nc \
           --procflow single_source \
-          --reader_name my_amsr2_netcdf \
+          --reader_name my_amsr2_reader \
           --product_name my_89pct \
           --filename_format my_fname_format \
           --output_format my_geotiff_output \
