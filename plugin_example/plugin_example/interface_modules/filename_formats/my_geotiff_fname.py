@@ -30,7 +30,7 @@ LOG = logging.getLogger(__name__)
 filename_type = 'standard'
 
 
-def my_fname_format(area_def, xarray_obj, product_name, coverage, output_type='png', output_type_dir=None,
+def my_fname_format(area_def, xarray_obj, product_name, coverage, output_type='tif', output_type_dir=None,
              product_dir=None, product_subdir=None, source_dir=None, basedir=gpaths['GEOIPS_OUTDIRS']):
 
     fname = pathjoin(basedir, '_'.join([xarray_obj.start_datetime.strftime('%Y%m%d.%H%M%S'),
