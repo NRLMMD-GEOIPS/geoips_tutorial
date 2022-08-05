@@ -43,7 +43,7 @@ setuptools.setup(
         'geoips.algorithms': [
             # Algorithm module interfaces
             # '<algorithm func name>=<plugin name>.interface_modules.algorithms.<algorithm file/module name>:<algorithm func name>',
-            'my_color89_alg=my_color89_alg.interface_modules.algorithms.my_color89_alg:my_color89_alg',
+            'my_color89_alg=my_plugin.interface_modules.algorithms.my_color89_alg:my_color89_alg',
         ],
         'geoips.output_formats': [
             # Add output format interface modules here
