@@ -1,4 +1,4 @@
-color89:
+my_color89:
     product_type: interp_alg_cmap
     alg_func: my_color89_alg
     alg_args: {}
