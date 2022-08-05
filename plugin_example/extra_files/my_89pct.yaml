@@ -1,4 +1,4 @@
-89pct:
+my_89pct:
     product_type: interp_alg_cmap
     alg_func: my_89pct_alg
     alg_args: 
