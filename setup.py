@@ -30,6 +30,8 @@ setuptools.setup(
     version=version,
     packages=setuptools.find_packages(),
     install_requires=['ipykernel',
+                      'notebook',
+                      'jupyter',
                       'python-dotenv',
                       ],
     entry_points={

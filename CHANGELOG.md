@@ -16,6 +16,18 @@
     # # # or FITNESS FOR A PARTICULAR PURPOSE.
     # # # See the included license for more details.
 
+
+NRLMMD-GEOIPS/geoips#12 add plugin example
+
+### Major New Functionality
+* Add plugin example
+    * extra_files directory with module files to place in correct location (my_89pct_alg, my_89pct, setup.py)
+    * script to copy files to correct location
+    * my_color89_alg, my_89pct_alg, my_color89, and my_89pct copied from $GEOIPS
+    * my_fname_format and my_geotiff_fname simple format
+    * color89 png and 89pct geotiff test scripts
+
+
 # geoips_tutorial#10
 
 ### BugFix
