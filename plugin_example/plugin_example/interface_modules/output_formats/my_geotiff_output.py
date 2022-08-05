@@ -55,13 +55,13 @@ def scale_geotiff_data(plot_data, mpl_colors_info, scale_data_min=1, scale_data_
     scale_data.fill_value = missing_value
     return scale_data.filled()
 
-def geotiff_standard(area_def,
-                     xarray_obj,
-                     product_name,
-                     output_fnames,
-                     product_name_title=None,
-                     mpl_colors_info=None,
-                     existing_image=None):
+def my_geotiff_output(area_def,
+                      xarray_obj,
+                      product_name,
+                      output_fnames,
+                      product_name_title=None,
+                      mpl_colors_info=None,
+                      existing_image=None):
 
     plot_data = scale_geotiff_data(xarray_obj[product_name].to_masked_array(), mpl_colors_info)
     import rasterio

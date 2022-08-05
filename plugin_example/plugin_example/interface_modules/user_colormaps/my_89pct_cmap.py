@@ -24,7 +24,7 @@ LOG = logging.getLogger(__name__)
 cmap_type = 'linear_segmented'
 
 
-def cmap_89pct(data_range=[105, 280], cbar_label='TB (K)'):
+def my_89pct_cmap(data_range=[105, 280], cbar_label='TB (K)'):
     ''' Colormap for displaying ~89GHz PMW data for weak TCs.
     
     Args:

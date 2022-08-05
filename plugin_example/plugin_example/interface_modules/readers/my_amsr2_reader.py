@@ -245,7 +245,7 @@ def read_amsr_data(full_xarray, chans):
     return xarrays
 
 
-def amsr2_netcdf(fnames, metadata_only=False, chans=None, area_def=None, self_register=False):
+def my_amsr2_reader(fnames, metadata_only=False, chans=None, area_def=None, self_register=False):
     ''' Read AMSR2 netcdf data products. NOTE AMSR2 OCEAN wind products are in sfc_winds_ncdf.py
 
     All GeoIPS 2.0 readers read data into xarray Datasets - a separate

@@ -30,7 +30,7 @@ LOG = logging.getLogger(__name__)
 filename_type = 'standard'
 
 
-def my_fname(area_def, xarray_obj, product_name, coverage, output_type='png', output_type_dir=None,
+def my_fname_format(area_def, xarray_obj, product_name, coverage, output_type='png', output_type_dir=None,
              product_dir=None, product_subdir=None, source_dir=None, basedir=gpaths['ANNOTATED_IMAGERY_PATH']):
 
     fname = os.path.join(basedir, '_'.join(xarray_obj.strftime('%Y%m%d.%H%M%S'),

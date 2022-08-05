@@ -43,18 +43,19 @@ setuptools.setup(
         'geoips.algorithms': [
             # Algorithm module interfaces
             # '<algorithm func name>=<plugin name>.interface_modules.algorithms.<algorithm file/module name>:<algorithm func name>',
+            'my_color89_alg=my_color89_alg.interface_modules.algorithms.my_color89_alg:my_color89_alg',
         ],
         'geoips.output_formats': [
             # Add output format interface modules here
-            'my_geotiff_output=<plugin_name>.interface_modules.output_formats.my_geotiff_output:my_geotiff_output',
+            'my_geotiff_output=my_plugin.interface_modules.output_formats.my_geotiff_output:my_geotiff_output',
         ],
         'geoips.user_colormaps': [
             # Add colormap interface modules here
-            'my_89pct_cmap=<plugin name>.interface_modules.user_colormaps.my_89pct_cmap:my_89pct_cmap',
+            'my_89pct_cmap=my_plugin.interface_modules.user_colormaps.my_89pct_cmap:my_89pct_cmap',
         ],
         'geoips.filename_formats': [
             # Add filename interface modules here
-            'my_fname_format=<plugin name>.interface_modules.filename_formats.my_fname_format:my_fname_format',
+            'my_fname_format=my_plugin.interface_modules.filename_formats.my_fname_format:my_fname_format',
         ],
       }
 )
