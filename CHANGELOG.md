@@ -17,7 +17,9 @@
     # # # See the included license for more details.
 
 
-NRLMMD-GEOIPS/geoips#12 add plugin example
+# v1.5.2.dev1: 2022-08-15, plugin example, tutorial bug fixes
+
+## NRLMMD-GEOIPS/geoips#12 add plugin example
 
 ### Major New Functionality
 * Add plugin example
@@ -27,21 +29,20 @@ NRLMMD-GEOIPS/geoips#12 add plugin example
     * my_fname_format and my_geotiff_fname simple format
     * color89 png and 89pct geotiff test scripts
 
-
-# geoips_tutorial#10
+## NRLMMD-GEOIPS/geoips_tutorial#10
 
 ### BugFix
 * **example launch.json**
     * Add envFile to launch.json, which sets the GEOIPS env variables for the procflow
 
-NRLMMD-GEOIPS/geoips#25 - remove Visible from tests
+## NRLMMD-GEOIPS/geoips#25 - remove Visible from tests
 
 ### Improvements
 * Use Infrared-Gray for AMSR2 overlay vs Visible
 * Use Infrared for goes-16 static product
 
 
-# NRLMMD-GEOIPS/geoips_tutorial#5-clean-up-and-apply-bug-fixes-for-jupyter-notebooks
+## NRLMMD-GEOIPS/geoips_tutorial#5-clean-up-and-apply-bug-fixes-for-jupyter-notebooks
 
 ### Bug Fixes
 * **notebooks/interfaces.ipynb**
@@ -61,7 +62,7 @@ NRLMMD-GEOIPS/geoips#25 - remove Visible from tests
 * **launch.json template**
     *Added a launch.json file intended to be copied over to a .vscode directory. It contains an AMSR 2 test case
 
-# NRLMMD-GEOIPS/geoips_tutorial#6
+## NRLMMD-GEOIPS/geoips_tutorial#6
 
 ### Improvements
 * **example_scripts** Added examples for Command Line Processing tutorial
@@ -70,7 +71,7 @@ NRLMMD-GEOIPS/geoips#25 - remove Visible from tests
     * AMSR2 windspeed config-based clean imagery example
     * AMSR2 overlays config-based imagery example
 
-# 1-tutorial-notebook-bug-fixes-and-readme-updates
+## NRLMMD-GEOIPS/geoips_tutorial#1-tutorial-notebook-bug-fixes-and-readme-updates
 
 ### Bug Fixes
 * **notebooks/utils/set\_env.ipy**
@@ -82,7 +83,7 @@ NRLMMD-GEOIPS/geoips#25 - remove Visible from tests
     * GEOIPS_CONFIG_FILE now points to geoips/setup/config_geoips
     * Replace instructions to checkout branch dev with main
 
-NRLMMD-GEOIPS/geoips_tutorial#3 add git lfs install to README.md
+## NRLMMD-GEOIPS/geoips_tutorial#3 add git lfs install to README.md
 
 ### Installation and Test
 * **README.md**
