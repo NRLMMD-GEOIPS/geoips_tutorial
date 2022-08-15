@@ -17,6 +17,9 @@
     # # # See the included license for more details.
 
 
+# v1.5.2.dev1: 2022-08-15, plugin example, tutorial bug fixes
+
+
 # v1.5.1: 2022-07-13, canned interface modules, tutorial plugin script
 
 ### Major New Functionality
