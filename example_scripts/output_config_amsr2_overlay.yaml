@@ -1,0 +1,38 @@
+reader_name: amsr2_netcdf
+sectored_read: False
+
+available_sectors:
+  tcweb_bdeck:
+    trackfile_parser: bdeck_parser
+    trackfiles:
+      - !ENV ${GEOIPS_PACKAGES_DIR}/geoips/tests/sectors/tc_bdecks/bio012020.dat
+
+  global:
+    sectorfiles:
+      - !ENV ${GEOIPS_PACKAGES_DIR}/geoips/tests/sectors/static/global.yaml
+    sector_list:
+      - global
+
+outputs:
+  tc_overlay:
+    requested_sector_type: tcweb_bdeck
+    output_format: imagery_annotated
+    filename_formats: ['tc_fname']
+    product_names:
+      - 37pct
+      - 89pct
+    background_products:
+      config_names: ['abi', 'ahi', 'seviri']
+      product_names: ['Visible', 'Infrared-Gray']
+
+  global_overlay:
+    requested_sector_type: global
+    minimum_coverage: 10
+    output_format: imagery_annotated
+    filename_formats: ['geoips_fname']
+    product_names:
+      - 89pct
+      - 37pct
+    background_products:
+      config_names: ['abi', 'ahi', 'seviri']
+      product_names: ['Visible', 'Infrared-Gray']
