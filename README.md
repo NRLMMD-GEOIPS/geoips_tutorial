@@ -1,96 +1,61 @@
     # # # Distribution Statement A. Approved for public release. Distribution unlimited.
-    # # # 
+    # # #
     # # # Author:
     # # # Naval Research Laboratory, Marine Meteorology Division
-    # # # 
-    # # # This program is free software:
-    # # # you can redistribute it and/or modify it under the terms
-    # # # of the NRLMMD License included with this program.
-    # # # 
-    # # # If you did not receive the license, see
+    # # #
+    # # # This program is free software: you can redistribute it and/or modify it under
+    # # # the terms of the NRLMMD License included with this program. This program is
+    # # # distributed WITHOUT ANY WARRANTY; without even the implied warranty of
+    # # # MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the included license
+    # # # for more details. If you did not receive the license, for more information see:
     # # # https://github.com/U-S-NRL-Marine-Meteorology-Division/
-    # # # for more information.
-    # # # 
-    # # # This program is distributed WITHOUT ANY WARRANTY;
-    # # # without even the implied warranty of MERCHANTABILITY
-    # # # or FITNESS FOR A PARTICULAR PURPOSE.
-    # # # See the included license for more details.
 
-Installation Guide
-==================
+GeoIPS Tutorial Repository
+==========================
 
-This installation guide has installation steps specific to installing the geoips_tutorial plugin, including
-the base geoips conda install if not already installed.
+The GeoIPS Tutorial repository contains Jupyter notebooks with
+interactive tutorials to aid in understanding the GeoIPS processing
+infrastructure and workflow.
 
-Setup System Environment Variables
-----------------------------------
+Please see the 
+[GeoIPS Documentation](https://github.com/NRLMMD-GEOIPS/geoips/blob/main/README.md)
+for more information on the GeoIPS base infrastructure and plugin architecture.
 
-```bash
+Package Overview
+-----------------
 
-    # Set up appropriate environment variables for all conda-based geoips_tutorial setup steps
-    # within this geoips_tutorial README below
+Jupyter notebooks are contained within the 
+[notebooks](https://github.com/NRLMMD-GEOIPS/geoips_tutorial/notebooks)
 
-    # These steps will need to be copied and pasted into your shell any time you want to run the 
-    # setup commands within this README.
-    
-    # Typical users do not have to make any modifications to the commands
-    # within this README, and can copy and paste directly.
+System Requirements
+---------------------
 
-    # Once geoips_tutorial has been installed, the "GEOIPS_CONFIG_FILE" specified below will be
-    # sourced when running geoips_tutorial, and the direct environment variable assignments
-    # within this section are no longer required.
+* geoips >= 1.5.3
+* Test data repos contained in $GEOIPS_TESTDATA_DIR for tests to pass.
 
-    # If you would like to have the GEOIPS_CONFIG_FILE automatically sourced so you do not have to manually run the 
-    # source command for every new shell, you can add 
-    # source </full/path/to/config/file>
-    # to your ~/.bashrc file
-
-    git lfs install  # Required to clone Git Large File Storage tracked data files
-
-    # GEOIPS_REPO_URL should point to the base URL for git clone commands
-    export GEOIPS_REPO_URL=https://github.com/NRLMMD-GeoIPS
-
-    # GEOIPS_BASEDIR will contain all source, output, and external dependencies
-    # Ensure this is consistently set for all installation / setup steps below
-    export GEOIPS_BASEDIR=$HOME/geoproc
-
-    # This config file must be sourced ANY TIME you want to run the geoips geoips_tutorial plugin
-    export GEOIPS_CONFIG_FILE=$GEOIPS_BASEDIR/geoips_packages/geoips/setup/config_geoips
-
-```
-
-Clone geoips_tutorial git repositories required for setup scripts
------------------------------------------------------------
-```bash
-    mkdir -p $GEOIPS_BASEDIR/geoips_packages/
-
-    git clone $GEOIPS_REPO_URL/geoips.git $GEOIPS_BASEDIR/geoips_packages/geoips
-    git -C $GEOIPS_BASEDIR/geoips_packages/geoips pull
-    git -C $GEOIPS_BASEDIR/geoips_packages/geoips checkout -t origin/main
-    git -C $GEOIPS_BASEDIR/geoips_packages/geoips checkout main
-    git -C $GEOIPS_BASEDIR/geoips_packages/geoips pull
-
-    git clone $GEOIPS_REPO_URL/geoips_tutorial.git ${GEOIPS_BASEDIR}/geoips_packages/geoips_tutorial
-    git -C ${GEOIPS_BASEDIR}/geoips_packages/geoips_tutorial pull
-    git -C ${GEOIPS_BASEDIR}/geoips_packages/geoips_tutorial checkout -t origin/main
-    git -C ${GEOIPS_BASEDIR}/geoips_packages/geoips_tutorial checkout main
-    git -C ${GEOIPS_BASEDIR}/geoips_packages/geoips_tutorial pull
-```
-
-IF REQUIRED: Install and test base geoips conda environment
+IF REQUIRED: Install base geoips package
 ------------------------------------------------------------
+SKIP IF YOU HAVE ALREADY INSTALLED BASE GEOIPS ENVIRONMENT 
+
+If GeoIPS Base is not yet installed, follow the
+[installation instructions](https://github.com/NRLMMD-GEOIPS/geoips/blob/main/docs/installation.rst)
+within the geoips source repo documentation:
+
+Install geoips_template_plugin package
+----------------------------------------
 ```bash
-    # SKIP IF YOU HAVE ALREADY INSTALLED BASE GEOIPS CONDA ENVIRONMENT 
-    # This prompts you through all the steps of installing the geoips conda environment from scratch,
-    # using the parameters specified above.  This only needs to be done once per system, skip if you
-    # already ran this command and successfully installed the geoips conda environment.
-    $GEOIPS_BASEDIR/geoips_packages/geoips/base_install_and_test.sh main
+    # Assuming you followed the fully supported installation,
+    # using $GEOIPS_PACKAGES_DIR and $GEOIPS_CONFIG_FILE:
+    source $GEOIPS_CONFIG_FILE
+    git clone -b $GEOIPS_ACTIVE_BRANCH $GEOIPS_REPO_URL $GEOIPS_PACKAGES_DIR/geoips_tutorial
+    pip install -e $GEOIPS_PACKAGES_DIR/geoips_tutorial
 ```
 
-Install geoips_tutorial package
--------------------------
+Test geoips_tutorial installation
+-----------------------------------------
 ```bash
-
+    # Assuming you followed the fully supported installation,
+    # using $GEOIPS_PACKAGES_DIR and $GEOIPS_CONFIG_FILE:
     source $GEOIPS_CONFIG_FILE
-    pip install -e $GEOIPS_BASEDIR/geoips_packages/geoips_tutorial
+    $GEOIPS_PACKAGES_DIR/geoips_tutorial/tests/test_all.sh
 ```
